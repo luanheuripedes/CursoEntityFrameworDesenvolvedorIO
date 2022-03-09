@@ -20,7 +20,9 @@ namespace CursoEFCore.Context
             //modelBuilder.ApplyConfiguration(new PedidoConfiguration());
 
             //Adiciona as configurações feitas separadas na hora de gerar o banco
-            modelBuilder.ApplyConfigurationFromAssembly(typeof(ApplicationContext).Assembly);
+            //Passo o typeof da propria classe e ele procura todas as classes concretas que implementam
+            //object IEntityTypeConfiguration
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationContext).Assembly);
 
 
         }
