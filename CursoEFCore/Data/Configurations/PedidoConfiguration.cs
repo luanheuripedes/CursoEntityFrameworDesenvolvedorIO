@@ -15,7 +15,8 @@ namespace CursoEFCore.Data.Configurations
         {
             builder.ToTable("Pedidos");
             builder.HasKey(p => p.Id);
-            builder.Property(p => p.IniciadoEm).HasDefaultValueSql("CURRENT_TIMESTAMP()").ValueGeneratedOnAdd();
+            //builder.Property(p => p.IniciadoEm).HasDefaultValueSql("SYSDATE()").ValueGeneratedOnAdd();
+            builder.Property(p => p.IniciadoEm).ValueGeneratedOnAdd();
             builder.Property(p => p.Status).HasConversion<string>();
             builder.Property(p => p.TipoFrete).HasConversion<int>();
             builder.Property(p => p.Observacao).HasColumnType("VARCHAR(512)");
