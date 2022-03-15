@@ -17,15 +17,15 @@ namespace CursoEFCore.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Adiciona as configurações feitas separadas na hora de gerar o banco
-            modelBuilder.ApplyConfiguration(new PedidoConfiguration());
-            modelBuilder.ApplyConfiguration(new ClienteConfiguration());
-            modelBuilder.ApplyConfiguration(new PedidoItemConfiguration());
-            modelBuilder.ApplyConfiguration(new ProdutoConfiguration());
+            //modelBuilder.ApplyConfiguration(new PedidoConfiguration());
+            //modelBuilder.ApplyConfiguration(new ClienteConfiguration());
+            //modelBuilder.ApplyConfiguration(new PedidoItemConfiguration());
+            //modelBuilder.ApplyConfiguration(new ProdutoConfiguration());
 
             //Adiciona as configurações feitas separadas na hora de gerar o banco
             //Passo o typeof da propria classe e ele procura todas as classes concretas que implementam
             //object IEntityTypeConfiguration
-            //modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationContext).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationContext).Assembly);
 
 
         }
