@@ -7,7 +7,12 @@ namespace CursoEFCore.Context
 {
     public class ApplicationContext:DbContext
     {
+        public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
+
+        public ApplicationContext() { }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql("Server=localhost;Database=EfCoreIntroducao;Uid=root;Pwd=123456789;",

@@ -23,7 +23,7 @@ namespace CursoEFCore.Data.Configurations
 
             builder.HasMany(p => p.Itens)
                 .WithOne(p => p.Pedido)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
