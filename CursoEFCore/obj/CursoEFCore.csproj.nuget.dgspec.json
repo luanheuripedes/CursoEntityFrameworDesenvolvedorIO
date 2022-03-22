@@ -1,34 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\heuri\\Documents\\Desenvolvedor.IO\\CursoEntityFramework\\Curso\\CursoEFCore\\CursoEFCore.csproj": {}
+    "C:\\Users\\Vostro3250\\Documents\\LUAN\\CursoEntityFrameworDesenvolvedorIO\\CursoEFCore\\CursoEFCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\heuri\\Documents\\Desenvolvedor.IO\\CursoEntityFramework\\Curso\\CursoEFCore\\CursoEFCore.csproj": {
+    "C:\\Users\\Vostro3250\\Documents\\LUAN\\CursoEntityFrameworDesenvolvedorIO\\CursoEFCore\\CursoEFCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\heuri\\Documents\\Desenvolvedor.IO\\CursoEntityFramework\\Curso\\CursoEFCore\\CursoEFCore.csproj",
+        "projectUniqueName": "C:\\Users\\Vostro3250\\Documents\\LUAN\\CursoEntityFrameworDesenvolvedorIO\\CursoEFCore\\CursoEFCore.csproj",
         "projectName": "CursoEFCore",
-        "projectPath": "C:\\Users\\heuri\\Documents\\Desenvolvedor.IO\\CursoEntityFramework\\Curso\\CursoEFCore\\CursoEFCore.csproj",
-        "packagesPath": "C:\\Users\\heuri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\heuri\\Documents\\Desenvolvedor.IO\\CursoEntityFramework\\Curso\\CursoEFCore\\obj\\",
+        "projectPath": "C:\\Users\\Vostro3250\\Documents\\LUAN\\CursoEntityFrameworDesenvolvedorIO\\CursoEFCore\\CursoEFCore.csproj",
+        "packagesPath": "C:\\Users\\Vostro3250\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Vostro3250\\Documents\\LUAN\\CursoEntityFrameworDesenvolvedorIO\\CursoEFCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\heuri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+          "C:\\Users\\Vostro3250\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://atlantasistemas.ddns.net:5555/v3/index.json": {},
+          "http://192.168.0.44:5555/v3/index.json": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -83,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
