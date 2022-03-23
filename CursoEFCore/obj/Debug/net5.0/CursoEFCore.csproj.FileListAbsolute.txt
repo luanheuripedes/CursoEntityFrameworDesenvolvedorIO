@@ -66,3 +66,8 @@ C:\Users\Vostro3250\Documents\LUAN\CursoEntityFrameworDesenvolvedorIO\CursoEFCor
 C:\Users\Vostro3250\Documents\LUAN\CursoEntityFrameworDesenvolvedorIO\CursoEFCore\obj\Debug\net5.0\CursoEFCore.pdb
 C:\Users\Vostro3250\Documents\LUAN\CursoEntityFrameworDesenvolvedorIO\CursoEFCore\obj\Debug\net5.0\CursoEFCore.genruntimeconfig.cache
 C:\Users\Vostro3250\Documents\LUAN\CursoEntityFrameworDesenvolvedorIO\CursoEFCore\obj\Debug\net5.0\ref\CursoEFCore.dll
+C:\Users\Vostro3250\Documents\LUAN\CursoEntityFrameworDesenvolvedorIO\CursoEFCore\bin\Debug\net5.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Vostro3250\Documents\LUAN\CursoEntityFrameworDesenvolvedorIO\CursoEFCore\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Vostro3250\Documents\LUAN\CursoEntityFrameworDesenvolvedorIO\CursoEFCore\bin\Debug\net5.0\Microsoft.Extensions.Logging.Configuration.dll
+C:\Users\Vostro3250\Documents\LUAN\CursoEntityFrameworDesenvolvedorIO\CursoEFCore\bin\Debug\net5.0\Microsoft.Extensions.Logging.Console.dll
+C:\Users\Vostro3250\Documents\LUAN\CursoEntityFrameworDesenvolvedorIO\CursoEFCore\bin\Debug\net5.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll

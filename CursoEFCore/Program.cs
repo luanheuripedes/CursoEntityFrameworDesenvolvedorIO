@@ -1,9 +1,8 @@
 ﻿using CursoEFCore.Context;
 using CursoEFCore.Domain;
 using CursoEFCore.Enums;
-using Microsoft.EntityFrameworkCore;
 using System;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace CursoEFCore
 {
@@ -22,10 +21,36 @@ namespace CursoEFCore
             }
             */
 
-            InserirDados();
+            //InserirDados();
+            InserirDadosEmMassa();
 
         }
 
+        private static void InserirDadosEmMassa()
+        {
+            var p1 = new Produto("123456789123","Produto teste Inserir em massa2"
+                                    , 18.45m, TipoProduto.MercadoriaParaRevenda, false);
+
+            //var c1 = new Cliente("Rafael Almeida", "3331-8838", "36900000", "MG", "Manhuaçu", "rafael@gmail.com");
+            
+
+            List<Cliente> listaClientes = new List<Cliente>();
+
+            var c1 = new Cliente("Lucas", "7777-8838", "78900000", "MG", "Manhuaçu", "Lucas@gmail.com");
+            var c2 = new Cliente("Almeida", "5555-8838", "15400000", "MG", "Manhuaçu", "Almeida@gmail.com");
+
+            listaClientes.Add(c1);
+            listaClientes.Add(c2);
+
+            using var db = new ApplicationContext();
+            //db.AddRange(c1, p1);
+
+            db.Clientes.AddRange(listaClientes);
+            //db.Set<Cliente>().AddRange(listaClientes);
+
+            var registors = db.SaveChanges();
+            Console.WriteLine("Total de registros"+registors);
+        }
         private static void InserirDados()
         {
             var p1 = new Produto("Produto Teste",
@@ -41,7 +66,7 @@ namespace CursoEFCore
 
             //retorna a quantidade de registros que foram afetados na base de dados *joga no banco
             var registros = db.SaveChanges();
-            Console.WriteLine(registros);
+            Console.WriteLine("Total de registros" + registros);
 
         }
     }
