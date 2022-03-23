@@ -1,8 +1,10 @@
 ﻿using CursoEFCore.Context;
 using CursoEFCore.Domain;
 using CursoEFCore.Enums;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CursoEFCore
 {
@@ -22,10 +24,29 @@ namespace CursoEFCore
             */
 
             //InserirDados();
-            InserirDadosEmMassa();
+            //InserirDadosEmMassa();
+            ConsultarDados();
 
         }
 
+        private static void ConsultarDados()
+        {
+            var db = new ApplicationContext();
+
+            //var consultaPorSintaxe = (from c in db.Clientes where c.Id > 0 select c).ToList();
+            var consultaPorMetodo = db.Clientes
+                    .Where(p => p.Id > 0)
+                    .OrderBy(p => p.Id)
+                    .ToList();
+
+            foreach (var cliente in consultaPorMetodo)
+            {
+                Console.WriteLine("Consultado o cliente " + cliente.Id);
+                //db.Clientes.Find(cliente.Id); //Responsavel por consultar se esta em memoria ou nao é o unico
+                db.Clientes.FirstOrDefault(p => p.Id == cliente.Id);
+            }
+
+        }
         private static void InserirDadosEmMassa()
         {
             var p1 = new Produto("123456789123","Produto teste Inserir em massa2"
