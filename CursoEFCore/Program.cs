@@ -27,7 +27,81 @@ namespace CursoEFCore
             //InserirDadosEmMassa();
             //ConsultarDados();
             //CadastrarPedido();
-            ConsultarPedidoCarregamentoAdiantado();
+            //ConsultarPedidoCarregamentoAdiantado();
+            AtualizarDados();
+        }
+
+        private static void AtualizarDados()
+        {
+            using var db = new ApplicationContext();
+
+            /*Atualiza toda a entidade no banco
+            //var cliente = db.Clientes.FirstOrDefault(c => c.Id == 3);
+            var cliente = db.Clientes.Find(3);
+
+            cliente.Nome = "Cliente alterado Passo 1";
+
+            db.Clientes.Update(cliente)
+            db.SaveChanges();
+            */
+
+
+            /*Não atualiza toda entidade no banco
+            //var cliente = db.Clientes.FirstOrDefault(c => c.Id == 3);
+            var cliente = db.Clientes.Find(3);
+
+            cliente.Nome = "Cliente alterado Passo 2";
+
+            db.SaveChanges();
+            */
+
+
+            //Atraves do Rastreamento Informa que a entidade esta recebendo uma alteração
+            /*
+            var cliente = db.Clientes.Find(3);
+
+            cliente.Nome = "Cliente alterado Passo 3";
+            
+            db.Entry(cliente).State = EntityState.Modified;
+
+            db.SaveChanges();
+            */
+
+
+            /*
+            //Desconectado - Os dados nao estao instanciados ainda
+            var cliente = db.Clientes.Find(3);
+
+            var clienteDesconectado = new
+            {
+                Nome = "Cliente desconectado passo 4",
+                Telefone = "777555111"
+            };
+
+            db.Entry(cliente).CurrentValues.SetValues(clienteDesconectado);
+            
+            db.SaveChanges();
+            */
+
+
+
+            //Temos a instacia do cliente
+
+            var cliente = new Cliente
+            {
+                Id = 3
+            };
+
+            var clienteDesconectado = new
+            {
+                Nome = "Cliente desconectado passo 5",
+                Telefone = "777555111"
+            };
+
+            db.Attach(cliente); //Para que o objeto comece a ser rastreado
+            db.Entry(cliente).CurrentValues.SetValues(clienteDesconectado);
+
+            db.SaveChanges();
 
         }
         private static void ConsultarPedidoCarregamentoAdiantado()
