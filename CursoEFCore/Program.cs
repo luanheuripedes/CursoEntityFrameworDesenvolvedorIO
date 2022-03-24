@@ -25,10 +25,53 @@ namespace CursoEFCore
 
             //InserirDados();
             //InserirDadosEmMassa();
-            ConsultarDados();
+            //ConsultarDados();
+            //CadastrarPedido();
+            ConsultarPedidoCarregamentoAdiantado();
 
         }
+        private static void ConsultarPedidoCarregamentoAdiantado()
+        {
+            using var db = new ApplicationContext();
+            //var pedidos = db.Pedidos.Include(p => p.Itens).ToList(); // carrega os itens
+            var pedidos = db.Pedidos
+                    .Include(p => p.Itens)
+                    .ThenInclude(p=>p.Produto)
+                    .ToList(); //carrega os itens e produtos
 
+
+            Console.WriteLine(pedidos.Count);
+        }
+        private static void CadastrarPedido()
+        {
+            using var db = new ApplicationContext();
+
+            //Consulta de um cliente e um produto
+            var cliente = db.Clientes.FirstOrDefault(x => x.Id == 3);
+            var produto = db.Produtos.FirstOrDefault(x => x.Id == 2);
+
+            var pedido = new Pedido
+            {
+                ClienteId = cliente.Id,
+                IniciadoEm = DateTime.Now,
+                FinalizadoEm = DateTime.Now,
+                Observacao = "Pedido Teste",
+                Status = StatusPedido.Analise,
+                TipoFrete = TipoFrete.SemFrete,
+                Itens = new List<PedidoItem>()
+                {
+                    new PedidoItem
+                    {
+                        ProdutoId = produto.Id,
+                        Desconto = 0,
+                        Quantidade = 1,
+                        Valor = 10,
+                    }
+                }
+            };
+            db.Pedidos.Add(pedido);
+            db.SaveChanges();
+        }
         private static void ConsultarDados()
         {
             var db = new ApplicationContext();
@@ -41,9 +84,10 @@ namespace CursoEFCore
 
             foreach (var cliente in consultaPorMetodo)
             {
-                Console.WriteLine("Consultado o cliente " + cliente.Id);
+                Console.WriteLine(cliente.Cidade + cliente.Email);
+                //Console.WriteLine("Consultado o cliente " + cliente.Id);
                 //db.Clientes.Find(cliente.Id); //Responsavel por consultar se esta em memoria ou nao é o unico
-                db.Clientes.FirstOrDefault(p => p.Id == cliente.Id);
+                //db.Clientes.FirstOrDefault(p => p.Id == cliente.Id);
             }
 
         }

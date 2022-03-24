@@ -9,6 +9,7 @@ namespace CursoEFCore.Domain
 {
     public class Pedido
     {
+        public Pedido() { }
         public int Id { get; set; }
 
         public DateTime IniciadoEm { get; set; }
