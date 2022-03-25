@@ -28,9 +28,30 @@ namespace CursoEFCore
             //ConsultarDados();
             //CadastrarPedido();
             //ConsultarPedidoCarregamentoAdiantado();
-            AtualizarDados();
+            //AtualizarDados();
+            RemoverRegistro();
         }
 
+        private static void RemoverRegistro()
+        {
+            using var db = new ApplicationContext();
+
+            /*
+            var cliente = db.Clientes.Find(3);
+            //db.Clientes.Remove(cliente);
+            //db.Remove(cliente);
+            //Informo ao EFCORE qual objeot eu vou estar manipulando
+            //e uso a propriedade State para informar o que eu quero fazer com o objeto
+            db.Entry(cliente).State = EntityState.Deleted;
+            db.SaveChanges();
+            */
+
+            //Forma desconectada
+            var cliente = new Cliente { Id = 4 };
+            db.Entry(cliente).State = EntityState.Deleted;
+            db.SaveChanges();
+
+        }
         private static void AtualizarDados()
         {
             using var db = new ApplicationContext();
