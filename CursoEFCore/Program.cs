@@ -29,7 +29,7 @@ namespace CursoEFCore
             //CadastrarPedido();
             //ConsultarPedidoCarregamentoAdiantado();
             //AtualizarDados();
-            RemoverRegistro();
+           // RemoverRegistro();
         }
 
         private static void RemoverRegistro()
@@ -47,6 +47,8 @@ namespace CursoEFCore
             */
 
             //Forma desconectada
+            //A diferença de usar essa segunda opção é que o ef tem uma interação com a base de dados
+            //A primeira forma ele primeiro localiza é muito bom para usar com regras de negocio
             var cliente = new Cliente { Id = 4 };
             db.Entry(cliente).State = EntityState.Deleted;
             db.SaveChanges();

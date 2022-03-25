@@ -3,6 +3,7 @@ using CursoEFCore.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Linq;
 
 namespace CursoEFCore.Context
 {
@@ -40,7 +41,27 @@ namespace CursoEFCore.Context
             //object IEntityTypeConfiguration
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationContext).Assembly);
 
-
+            MapearPropriedadesEsquecidas(modelBuilder);
         }
+
+        private void MapearPropriedadesEsquecidas(ModelBuilder modelbuilder)
+        {
+            foreach (var entity in modelbuilder.Model.GetEntityTypes())
+            {
+                var properties = entity.GetProperties().Where(p => p.ClrType == typeof(string));
+
+                foreach (var property in properties)
+                {
+                    if (string.IsNullOrEmpty(property.GetColumnType()) 
+                                && !property.GetMaxLength().HasValue)
+                    {
+                        //property.SetMaxLength(100);
+                        property.SetColumnType("VARCHAR(100)");
+                    }
+                }
+            }
+        }
+
+
     }
 }
