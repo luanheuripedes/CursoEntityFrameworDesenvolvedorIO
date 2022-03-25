@@ -25,7 +25,10 @@ namespace CursoEFCore.Context
                 .UseLoggerFactory(_Logger) //Informa qual log quero utilizar
                 .EnableSensitiveDataLogging() // Para ver o valor de cada parametro no console
                 .UseMySql("Server=localhost;Database=EfCoreIntroducao;Uid=root;Pwd=123456789;",
-                                    new MySqlServerVersion(new Version(10, 4, 17)));
+                                    new MySqlServerVersion(new Version(10, 4, 17)
+                                    ), p=>p.EnableRetryOnFailure(maxRetryCount:2
+                                    ,maxRetryDelay:TimeSpan.FromSeconds(2)
+                                    , errorNumbersToAdd:null));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
